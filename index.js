@@ -21,32 +21,44 @@ async function loopRPC() {
       url = readline.question('Enter your Lava RPC URL (Ethereum): ');
       while (true) {
         await callRpcEthereum(url, count);
-        console.log('Waiting for 15 minute...'.yellow);
-        await new Promise((resolve) => setTimeout(resolve, 15 * 60 * 1000));
+        const randomMinutes = Math.floor(Math.random() * 59) + 1;
+        console.log(`Waiting for ${randomMinutes} minute(s)...`.yellow);
+        await new Promise((resolve) =>
+          setTimeout(resolve, randomMinutes * 60 * 1000)
+        );
       }
       break;
     case '2':
       url = readline.question('Enter your NEAR RPC URL: ');
       while (true) {
         await callRpcNear(url, count);
-        console.log('Waiting for 15 minute...'.yellow);
-        await new Promise((resolve) => setTimeout(resolve, 15 * 60 * 1000));
+        const randomMinutes = Math.floor(Math.random() * 59) + 1;
+        console.log(`Waiting for ${randomMinutes} minute(s)...`.yellow);
+        await new Promise((resolve) =>
+          setTimeout(resolve, randomMinutes * 60 * 1000)
+        );
       }
       break;
     case '3':
       url = readline.question('Enter your StarkNet RPC URL: ');
       while (true) {
         await callRpcStarkNet(url, count);
-        console.log('Waiting for 15 minute...'.yellow);
-        await new Promise((resolve) => setTimeout(resolve, 15 * 60 * 1000));
+        const randomMinutes = Math.floor(Math.random() * 59) + 1;
+        console.log(`Waiting for ${randomMinutes} minute(s)...`.yellow);
+        await new Promise((resolve) =>
+          setTimeout(resolve, randomMinutes * 60 * 1000)
+        );
       }
       break;
     case '4':
       url = readline.question('Enter your Axelar RPC URL: ');
       while (true) {
         await callRpcAxelar(url, count);
-        console.log('Waiting for 15 minute...'.yellow);
-        await new Promise((resolve) => setTimeout(resolve, 15 * 60 * 1000));
+        const randomMinutes = Math.floor(Math.random() * 59) + 1;
+        console.log(`Waiting for ${randomMinutes} minute(s)...`.yellow);
+        await new Promise((resolve) =>
+          setTimeout(resolve, randomMinutes * 60 * 1000)
+        );
       }
       break;
     default:
