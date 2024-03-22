@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-async function callRpcStarkNet(url, count) {
+async function callRpcStarknet(url, count) {
   try {
     const { data } = await axios({
       method: 'POST',
@@ -20,9 +20,9 @@ async function callRpcStarkNet(url, count) {
   } catch (error) {
     console.error(
       'Error fetching latest StarkNet batch:',
-      error.response?.data || error.message
+      error.response ? error.response.data : error.message
     );
   }
 }
 
-module.exports = callRpcStarkNet;
+module.exports = callRpcStarknet;

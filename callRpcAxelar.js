@@ -20,7 +20,7 @@ async function callRpcAxelar(url, count) {
   } catch (error) {
     console.error(
       'Error fetching latest Axelar block:',
-      error.response?.data || error.message
+      error.response && error.response.data ? error.response.data : error.message
     );
   }
 }
